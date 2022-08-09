@@ -13,6 +13,20 @@ const Stack = new Stack(['fox', 'goose', 'lizard']);
 console.log(stack);
 Stack.describeClass();
 
-class Queue {}
+class Queue {
+    #list = [];
+    constructor(initialList) {
+        if (initialList) {
+            this.#list = initialList;
+        }
+    }
+    enqueue(item) {
+        this.#list.push(item);
+        
+    }
+
+
+
+}
 
 module.exports = { Stack, Queue };
