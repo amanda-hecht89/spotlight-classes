@@ -1,18 +1,28 @@
 class Stack {
   //attribute below
-  #list = [];
-  constructor(stack) {
-    if (stack) {
-      this.#list = stack;
+  #list;
+  
+  constructor(list) {
+      this.#list = list || [];
     }
   }
-  push(newItem) {}
+  push(newItem) {
+    this.#list.push(newItem);
+  }
 }
 
 const Stack = new Stack(['fox', 'goose', 'lizard']);
 console.log(stack);
 Stack.describeClass();
 
-class Queue {}
+class Queue {
+    #list = [];
+    constructor(queue) {
+        if (queue) {
+        this.#list = queue;
+        }
+    }
+    enqueue(newItem) {}
+}
 
 module.exports = { Stack, Queue };
