@@ -16,13 +16,21 @@ console.log(stack);
 Stack.describeClass();
 
 class Queue {
-    #list = [];
-    constructor(queue) {
-        if (queue) {
-        this.#list = queue;
-        }
+    #list;
+    constructor(list) {
+        this.#list = list || [];
     }
-    enqueue(newItem) {}
-}
+    enqueue(item) {
+        this.#list.push(item);
+    }
+
+    get count() {
+        return this.#list.length;
+    }
+
+    get next() {
+        return this.#list[0];
+    }
+
 
 module.exports = { Stack, Queue };
