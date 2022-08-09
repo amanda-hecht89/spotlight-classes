@@ -9,20 +9,25 @@ class Stack {
   push(newItem) {}
 }
 
-const Stack = new Stack(['fox', 'goose', 'lizard']);
-console.log(stack);
-Stack.describeClass();
-
 class Queue {
     #list = [];
     constructor(initialList) {
-        if (initialList) {
             this.#list = initialList;
-        }
     }
     enqueue(item) {
-        this.#list.push(item);
-        
+        this.push(item);
+    }
+
+    dequeue() {
+        return this
+    }
+
+    get count() {
+        return this.#list.length;
+    }
+
+    get next() {
+        return this.#list[0];
     }
 
 
